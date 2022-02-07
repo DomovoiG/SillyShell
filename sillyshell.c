@@ -2,9 +2,8 @@
 * Author: Austin Gallup
 * Date: 2/3/22
 * Class: CS-333
-* Program: sillyshell.c, mimmics a shell.
+* Program: sillyshell.c, mimics a shell.
 ***************************************************/
-
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,10 +14,9 @@
 //====================CONSTANTS=====================
 int const MAX_USER_INPUT = 100;
 
-//====================GLOABALS=====================
+//====================GLOBALS=====================
 int flag = 0;
 int background_flag = 0;
-
 
 /*==================================================
 *init_shell
@@ -74,7 +72,6 @@ userin()
 	}
 	
 }
-
 
 /*==================================================
 *tokenize
@@ -165,7 +162,6 @@ run_args(char** arg_list)
 	return;
 }
 
-
 /*==================================================
 *sigchld_handler
 *DESC: Sets up signal handler
@@ -202,7 +198,6 @@ sigchld_start()
 
 }
 
-
 /*==================================================
 *shell
 *DESC: Runs the shell.
@@ -212,7 +207,6 @@ sigchld_start()
 void
 shell()
 {
-
 	init_shell();
 	char* input_string;
 	char** arg_list;
@@ -230,8 +224,8 @@ shell()
 		run_args(arg_list);
 		free(input_string);	
 
-
-		if(flag == 1) {
+		if(flag == 1) 
+		{
 			printf("\nClosing Shell...\n");
 			exit(0);
 		}
@@ -248,7 +242,6 @@ shell()
 }
 
 /*=======================MAIN===========================*/
-
 int
 main()
 {
